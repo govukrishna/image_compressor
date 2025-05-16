@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>All-in-One Image & PDF Tools | Free Online Utility Suite</title>
+  <meta name="description" content="Access a wide variety of free online image and PDF tools including compression, resizing, merging, and conversion. Easy, fast, and secure with no installation." />
+  <meta name="keywords" content="image tools, pdf tools, image compression, pdf merge, pdf compress, resize image, free online tools" />
+  <meta name="author" content="Your Tool Website" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #f0f0f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    header {
+      background: rgba(0,0,0,0.45);
+      padding: 1.25rem 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: saturate(180%) blur(15px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #e1e1e8;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      font-weight: 800;
+      font-size: 1.8rem;
+      letter-spacing: 1.4px;
+      margin: 0;
+      user-select: none;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    nav a {
+      color: #d8d8ff;
+      font-weight: 600;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    nav a:first-child {
+      margin-left: 0;
+    }
+    nav a:hover,
+    nav a:focus {
+      color: #aae8ff;
+      outline: none;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 1100px;
+      margin: 3rem auto 2rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .hero {
+      margin-bottom: 3.5rem;
+      user-select: none;
+      color: #d2d6ffdd;
+      text-shadow: 0 2px 9px rgba(20,20,48,0.6);
+    }
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #f0f0fb;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #8360c3, #2ebf91);
+      padding: 1.2rem 2.8rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 7px 20px rgba(46, 191, 145, 0.8);
+      transition: background 0.4s ease, transform 0.25s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    .cta-button:hover,
+    .cta-button:focus {
+      background: linear-gradient(135deg, #59d0b5, #2ba481);
+      transform: translateY(-3px);
+      outline: none;
+      box-shadow: 0 12px 28px rgba(46, 191, 145, 0.95);
+    }
+
+    /* Tools grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.4rem;
+      margin-bottom: 4rem;
+    }
+    .tool-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 10px 32px rgba(0,0,0,0.3);
+      cursor: pointer;
+      color: #ceffd9;
+      transition: box-shadow 0.3s ease, transform 0.15s ease;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .tool-card:hover,
+    .tool-card:focus-within {
+      box-shadow: 0 12px 48px rgba(120, 100, 255, 0.55);
+      transform: translateY(-6px);
+      outline: none;
+    }
+    .tool-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: #a7ccff;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.25));
+    }
+    .tool-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      letter-spacing: 0.03em;
+      color: #cce8ff;
+      user-select: none;
+    }
+    .tool-desc {
+      font-size: 0.95rem;
+      color: #d3f0e9cc;
+      flex-grow: 1;
+      margin-bottom: 1.5rem;
+      user-select: text;
+    }
+    .tool-link {
+      background: #3fad76;
+      padding: 0.55rem 1.4rem;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 12px;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(61, 173, 118, 0.7);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+    .tool-link:hover,
+    .tool-link:focus {
+      background: #65d395;
+      transform: translateY(-2px);
+      outline: none;
+      box-shadow: 0 7px 18px rgba(101, 211, 149, 0.9);
+    }
+
+    /* Advertisement container */
+    .ad-container {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      border: 2px dashed #89decc;
+      color: #b6f2de;
+      padding: 1.8rem 2rem;
+      margin: 4rem auto 3rem;
+      max-width: 728px;
+      text-align: center;
+      font-size: 1rem;
+      user-select: none;
+      box-shadow: 0 0 28px rgba(36, 236, 217, 0.5);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      backdrop-filter: saturate(180%) blur(15px);
+      transition: border-color 0.3s ease;
+    }
+    .ad-container:hover {
+      border-color: #5ef3d5;
+      box-shadow: 0 0 38px #5ef3d5;
+      color: #e8fffa;
+      background: rgba(255, 255, 255, 0.23);
+    }
+    .ad-container p:first-child {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 1px 5px rgba(14,94,92,0.6);
+    }
+    .ad-container code {
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.2em 0.6em;
+      border-radius: 8px;
+      font-family: 'Fira Mono', monospace;
+      color: #cdfde7;
+      user-select: text;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.42);
+      padding: 1.5rem 1rem;
+      text-align: center;
+      color: #dadde4cc;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.25);
+      user-select: none;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #aae8ffcc;
+      text-decoration: none;
+    }
+    footer a:hover,
+    footer a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+      }
+      nav {
+        align-self: flex-end;
+      }
+      main {
+        margin: 2rem auto 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+      .hero p {
+        font-size: 1.05rem;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .tools-grid {
+        gap: 1.7rem;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Your Tool Website</h1>
+    <nav aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="image-compression-tool.html">Image Tools</a>
+      <a href="pdf-tools.html">PDF Tools</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" role="banner">
+      <h2>All Your Image &amp; PDF Tools in One Place</h2>
+      <p>Easily optimize, convert, compress, and edit your images and PDF files online — free, secure, and without any installations.</p>
+      <a href="image-compression-tool.html" class="cta-button" role="button">Get Started Now</a>
+    </section>
+
+    <section aria-label="Available tools" class="tools-grid">
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">🖼️</div>
+        <h3 class="tool-name">Image Compression</h3>
+        <p class="tool-desc">Compress images to reduce file size with adjustable quality control.</p>
+        <a href="image-compression-tool.html" class="tool-link" aria-label="Launch Image Compression tool">Use Tool</a>
+      </article>
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">✂️</div>
+        <h3 class="tool-name">Image Resizer</h3>
+        <p class="tool-desc">Resize your images quickly to custom dimensions or presets.</p>
+        <a href="image-resizer.html" class="tool-link" aria-label="Launch Image Resizer tool">Use Tool</a>
+      </article>
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">📄</div>
+        <h3 class="tool-name">PDF Compressor</h3>
+        <p class="tool-desc">Reduce PDF file size to save storage or speed up sharing.</p>
+        <a href="pdf-compressor.html" class="tool-link" aria-label="Launch PDF Compressor tool">Use Tool</a>
+      </article>
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">🗂️</div>
+        <h3 class="tool-name">PDF Merger</h3>
+        <p class="tool-desc">Combine multiple PDFs into a single file quickly and effortlessly.</p>
+        <a href="pdf-merger.html" class="tool-link" aria-label="Launch PDF Merger tool">Use Tool</a>
+      </article>
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">↔️</div>
+        <h3 class="tool-name">PDF Splitter</h3>
+        <p class="tool-desc">Split large PDFs into smaller parts with precision and ease.</p>
+        <a href="pdf-splitter.html" class="tool-link" aria-label="Launch PDF Splitter tool">Use Tool</a>
+      </article>
+      <article class="tool-card" tabindex="0">
+        <div class="tool-icon" aria-hidden="true">🔄</div>
+        <h3 class="tool-name">Image Format Converter</h3>
+        <p class="tool-desc">Convert images between PNG, JPEG, and more supported formats.</p>
+        <a href="image-converter.html" class="tool-link" aria-label="Launch Image Format Converter tool">Use Tool</a>
+      </article>
+    </section>
+
+    <!-- Advertisement space - Insert Google AdSense code below -->
+    <section class="ad-container" aria-label="Advertisement section">
+      <!-- Replace the data-ad-client and data-ad-slot values below with your Google AdSense credentials -->
+      <p>Advertisement</p>
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-9790367445995271"
+          data-ad-slot="1234567890"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      <p style="font-size:0.9rem; margin-top: 0.5rem; color: #a4d8d1;">
+          Replace <code>ca-pub-9790367445995271</code> with your AdSense Publisher ID.<br>
+          Replace <code>1234567890</code> with your Ad Unit ID.<br>
+          This ad container is fully responsive.
+      </p>
+    </section>
+
+    <section id="contact" aria-label="Contact Information" style="max-width: 640px; margin: 0 auto 2rem; color: #d3d8ffcc; text-align: center; user-select: text;">
+      <h3>Contact &amp; Support</h3>
+      <p>If you have questions, feedback, or need assistance, please reach out at <a href="mailto:support@yourdomain.com" style="color:#8bcef9;">support@yourdomain.com</a>.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2024 Your Tool Website. All rights reserved. | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
+```
+This homepage:
+- Has a strong hero section with big title and call to action
+- Presents each tool as a clickable card with icon and short description in a responsive grid
+- Responsive nav and layout for mobile/tablet/desktop
+- Advertisement area with Google AdSense placeholders
+- Contact section
+- Modern and consistent styling similar to your tool page
+
+Let me know if you want me to help create the pages for the other tools as well or add more details!
